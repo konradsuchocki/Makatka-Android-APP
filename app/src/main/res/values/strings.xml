@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="bilans">BILANS</string>
+    <string name="dodaj_nowego_u_ytkownika">Dodaj nowego użytkownika</string>
+    <string name="wp_ata_akademia">WPŁATA AKADEMIA</string>
+    <string name="wyloguj">wyloguj</string>
+    <string name="wp_ata_komercja">WPŁATA KOMERCJA</string>
+    <string name="wp_a">Wpłać</string>
+    <string name="kwota">kwota</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="pozosta_o_ci_100z">Pozostało Ci 100zł</string>
+
+
+    <string-array name="planets_array">
+        <item>Admin</item>
+        <item>Użytkownik</item>
+    </string-array>
+
+
+</resources>
