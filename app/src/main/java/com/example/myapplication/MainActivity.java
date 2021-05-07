@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 SharedPreferences.Editor editor = sp.edit();
-                StringRequest sr = new StringRequest(Request.Method.POST,"192.168.1.35", new Response.Listener<String>() {
+                StringRequest sr = new StringRequest(Request.Method.POST,"http://192.168.1.35/user_login.php", new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
