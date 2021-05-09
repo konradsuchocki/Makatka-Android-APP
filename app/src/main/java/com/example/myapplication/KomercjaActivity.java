@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -68,7 +67,7 @@ public class KomercjaActivity extends AppCompatActivity {
                     public void onResponse(String response) {
 
 
-
+                            paymentValue.setText(null);
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
@@ -122,7 +121,7 @@ public class KomercjaActivity extends AppCompatActivity {
 
     }
 
-        }
+}
 
 
 

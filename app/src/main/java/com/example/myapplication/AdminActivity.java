@@ -9,6 +9,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class AdminActivity extends AppCompatActivity {
 
     @Override
@@ -16,8 +22,12 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
+
         SharedPreferences sp;
         sp = getSharedPreferences("Usernameprefs", Context.MODE_PRIVATE);
+
+
+
 
 
         Button btn_logout = findViewById(R.id.btn_logout);
@@ -63,4 +73,28 @@ public class AdminActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        SharedPreferences sp;
+        sp = getSharedPreferences("Usernameprefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        //Refresh your stuff here
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://192.168.1.35/usernames.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        editor.putString("akademia_usernames", response.toString());
+                        editor.apply();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        Volley.newRequestQueue(this).add(stringRequest);
+    }
 }
+

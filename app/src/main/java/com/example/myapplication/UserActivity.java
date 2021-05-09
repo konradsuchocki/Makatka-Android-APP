@@ -40,7 +40,6 @@ public class UserActivity extends AppCompatActivity {
 
         TextView moneyLeft = (TextView) findViewById(R.id.moneyLeft);
 
-
         RequestQueue queue = Volley.newRequestQueue(UserActivity.this);
         StringRequest sr = new StringRequest(Request.Method.POST,"http://192.168.1.35/user_update.php", new Response.Listener<String>() {
             @Override
@@ -52,13 +51,12 @@ public class UserActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
 
                     moneyLeft.setText("Pozostało Ci : " + jsonObject.getString("money")+" zł.");
-                   // Toast.makeText(getApplicationContext(),jsonObject.getString("money"), Toast.LENGTH_SHORT).show();
 
 
                 }
                 catch (JSONException e) {
                     //  Toast.makeText(getApplicationContext(),"Please type both, username and password", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Błąd" + e.toString(), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -74,16 +72,9 @@ public class UserActivity extends AppCompatActivity {
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("actual_username",actualUsername);
-                params.put("amount","");
+//                params.put("amount","");
 
 
-                return params;
-            }
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/x-www-form-urlencoded");
                 return params;
             }
         };
