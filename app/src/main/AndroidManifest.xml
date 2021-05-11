@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".KomercjaActivity"></activity>
+        <activity android:name=".OstatnieActivity"></activity>
+        <activity android:name=".BilansActivity" />
+        <activity android:name=".KomercjaActivity" />
         <activity android:name=".AkademiaActivity" />
         <activity android:name=".AddUserActivity" />
         <activity android:name=".UserActivity" />

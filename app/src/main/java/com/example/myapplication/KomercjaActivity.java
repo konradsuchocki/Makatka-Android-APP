@@ -62,7 +62,7 @@ public class KomercjaActivity extends AppCompatActivity {
 
 
                 RequestQueue queue = Volley.newRequestQueue(KomercjaActivity.this);
-                StringRequest sr = new StringRequest(Request.Method.POST,"http://192.168.1.35/payment.php", new Response.Listener<String>() {
+                StringRequest sr = new StringRequest(Request.Method.POST,"http://172.20.10.12/payment.php", new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 

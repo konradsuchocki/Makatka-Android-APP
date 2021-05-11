@@ -71,6 +71,15 @@ public class AdminActivity extends AppCompatActivity {
             }
 
         });
+
+        Button btn_bilans= findViewById(R.id.btn_bilans);
+        btn_bilans.setOnClickListener(v -> {
+            {
+                Intent intent = new Intent(this, BilansActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 
     @Override
@@ -81,7 +90,7 @@ public class AdminActivity extends AppCompatActivity {
         sp = getSharedPreferences("Usernameprefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         //Refresh your stuff here
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://192.168.1.35/usernames.php",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://172.20.10.12/usernames.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

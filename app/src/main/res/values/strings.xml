@@ -11,6 +11,7 @@
     <string name="start">START</string>
     <string name="stop">STOP</string>
     <string name="pozosta_o_ci_100z">Pozostało Ci 100zł</string>
+    <string name="ostatnie_wplaty">ostatnie wpłaty</string>
 
 
     <string-array name="planets_array">

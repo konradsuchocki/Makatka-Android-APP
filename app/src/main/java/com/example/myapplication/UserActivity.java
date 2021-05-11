@@ -41,7 +41,7 @@ public class UserActivity extends AppCompatActivity {
         TextView moneyLeft = (TextView) findViewById(R.id.moneyLeft);
 
         RequestQueue queue = Volley.newRequestQueue(UserActivity.this);
-        StringRequest sr = new StringRequest(Request.Method.POST,"http://192.168.1.35/user_update.php", new Response.Listener<String>() {
+        StringRequest sr = new StringRequest(Request.Method.POST,"http://172.20.10.12/user_update.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
